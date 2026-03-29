@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tattenhoe Youth U9 Panthers – League Dashboard</title>
+<style>
+:root{--navy:#12284a;--blue:#1f5fae;--white:#fff;--text:#1f2937;--muted:#6b7280;--green:#148447;--amber:#b97900;--red:#b42318;--border:rgba(18,40,74,.10);--shadow:0 12px 28px rgba(18,40,74,.12);--radius:22px}
+*{box-sizing:border-box} body{margin:0;padding:18px;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:linear-gradient(180deg,#edf4ff 0%,#f8fbff 55%,#f4f7fb 100%)}
+.wrap{max-width:1180px;margin:0 auto}.card{background:var(--white);border-radius:28px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:28px 24px 18px}.eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);margin-bottom:12px}
+h1{margin:0;font-size:clamp(28px,5vw,42px);line-height:1.04}.sub{margin-top:8px;max-width:860px;color:rgba(255,255,255,.9);font-size:16px;line-height:1.45}.hero-grid{display:grid;grid-template-columns:1.8fr .8fr;gap:16px;align-items:start}
+.latest{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:14px 16px}.mini-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.8;margin-bottom:6px}.mini-value{font-size:20px;font-weight:700}.pill{display:inline-block;margin-top:8px;background:#e7f6ed;color:var(--green);font-weight:700;font-size:12px;padding:6px 10px;border-radius:999px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.tab-btn{border:none;background:rgba(255,255,255,.14);color:#fff;padding:12px 14px;border-radius:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14)}.tab-btn.active{background:#fff;color:var(--navy)}
+.body{padding:20px}.tab-panel{display:none}.tab-panel.active{display:block}.section{background:linear-gradient(180deg,#fff,#f9fbff);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:18px}
+.section h2{margin:0 0 14px;color:var(--navy);font-size:20px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px}.label{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:8px}.value{color:var(--navy);font-size:28px;font-weight:800}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.squad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.player{background:#fff;border:1px solid var(--border);border-radius:14px;padding:12px 14px;font-weight:700;color:var(--navy)}.player small{display:block;margin-top:4px;font-weight:400;color:var(--muted)}
+.upcoming{list-style:none;padding:0;margin:0;display:grid;gap:10px}.upcoming li{background:#fff;border:1px solid var(--border);border-radius:14px;padding:12px 14px}.up-date{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}.up-opp{font-weight:700;color:var(--navy);margin-bottom:4px}.up-meta{color:var(--muted);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top} th{background:#eef5ff;color:var(--navy);font-size:13px;text-transform:uppercase;letter-spacing:.05em} tr:last-child td{border-bottom:none}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:999px;background:var(--navy);color:#fff;font-size:12px;font-weight:700}.trophy-date{display:inline-block;background:#fff4cf;color:#8d6400;padding:4px 8px;border-radius:999px;margin:2px 6px 2px 0;font-size:12px;font-weight:700}
+.note{color:var(--muted);font-size:13px;line-height:1.45;margin-top:10px}.highlight{background:linear-gradient(135deg,#fff7df,#fff);border:1px solid rgba(185,121,0,.24);border-radius:18px;padding:18px}.highlight-title{font-size:18px;font-weight:800;color:#8d6400;margin-bottom:10px}.quote{font-size:17px;line-height:1.6}
+.result-pill{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700}.win{background:#e7f6ed;color:var(--green)}.draw{background:#eef5ff;color:var(--blue)}.loss{background:#fdecec;color:var(--red)}.cancelled{background:#f3f4f6;color:#4b5563}
+.footer{padding:0 20px 20px;color:var(--muted);font-size:13px;line-height:1.45}
+@media (max-width:920px){body{padding:10px}.hero-grid,.grid,.stats,.squad-grid{grid-template-columns:1fr}.body{padding:14px}.tab-btn{width:100%;justify-content:center}th,td{padding:10px 8px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="hero">
+<div class="eyebrow">2025–26 Season Dashboard</div>
+<div class="hero-grid">
+<div><h1>Tattenhoe Youth U9 Panthers</h1></div>
+<div class="latest"><div class="mini-label">Latest league result</div><div class="mini-value">28 Mar 2026 · 11–0 vs Shenley FC U9 Sharks</div><div class="pill">Player of the Match: Prajen</div></div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" data-tab="overview">🏠 Overview</button>
+<button class="tab-btn" data-tab="scorers">⚽ Scorers & Trophies</button>
+<button class="tab-btn" data-tab="results">📋 Results</button>
+<button class="tab-btn" data-tab="highlight">⭐ Latest Highlight</button>
+</div></div>
+
+<div class="body">
+<section class="tab-panel active" id="overview">
+<div class="section"><h2>📊 Team at a glance</h2><div class="stats">
+<div class="stat"><div class="label">League matches played</div><div class="value">15</div></div>
+<div class="stat"><div class="label">Results summary</div><div class="value">11W 2D 2L</div></div>
+<div class="stat"><div class="label">Goals scored</div><div class="value">66</div></div>
+<div class="stat"><div class="label">Cancelled league games</div><div class="value">2</div></div>
+</div></div>
+<div class="grid">
+<div class="section"><h2>👥 Current squad</h2><div class="squad-grid">
+<div class="player">Arnold<small>Player</small></div><div class="player">Macy<small>Player</small></div><div class="player">Max<small>Player</small></div>
+<div class="player">Oliver<small>Player</small></div><div class="player">Ollie<small>Player</small></div><div class="player">Prajen<small>Player</small></div>
+<div class="player">Romario<small>Player</small></div><div class="player">Rylan<small>Player</small></div><div class="player">Theo<small>Player</small></div>
+<div class="player">Vihaan<small>Player</small></div><div class="player">Josh<small>Coach</small></div>
+</div></div>
+<div class="section"><h2>🗓️ Upcoming league fixtures</h2><ul class="upcoming">
+<li><div class="up-date">Sat 11 Apr 2026</div><div class="up-opp">vs Tingewick FC U9</div><div class="up-meta">League</div></li>
+<li><div class="up-date">Sat 18 Apr 2026</div><div class="up-opp">at Bromham United AFC U9 Lions</div><div class="up-meta">League</div></li>
+<li><div class="up-date">Sat 2 May 2026</div><div class="up-opp">at Buckingham FC Youth U9 Rovers</div><div class="up-meta">League</div></li>
+<li><div class="up-date">Sat 9 May 2026</div><div class="up-opp">vs Shenley FC U9 Sharks</div><div class="up-meta">League</div></li>
+<li><div class="up-date">Sat 16 May 2026</div><div class="up-opp">vs Cranfield Colts U9 Vipers</div><div class="up-meta">League</div></li>
+</ul></div></div></section>
+
+<section class="tab-panel" id="scorers">
+<div class="grid">
+<div class="section"><h2>⚽ Current squad scorer ranking</h2><table><thead><tr><th>Rank</th><th>Player</th><th>Goals</th></tr></thead><tbody>
+<tr><td><span class="rank-badge">1</span></td><td>Rylan</td><td>18</td></tr>
+<tr><td><span class="rank-badge">2</span></td><td>Macy</td><td>10</td></tr>
+<tr><td><span class="rank-badge">3</span></td><td>Max</td><td>9</td></tr>
+<tr><td><span class="rank-badge">4</span></td><td>Prajen</td><td>7</td></tr>
+<tr><td><span class="rank-badge">5</span></td><td>Vihaan</td><td>6</td></tr>
+<tr><td><span class="rank-badge">6</span></td><td>Arnold</td><td>5</td></tr>
+<tr><td><span class="rank-badge">7</span></td><td>Theo</td><td>5</td></tr>
+<tr><td><span class="rank-badge">8</span></td><td>Oliver</td><td>2</td></tr>
+<tr><td><span class="rank-badge">9</span></td><td>Ollie</td><td>0</td></tr>
+<tr><td><span class="rank-badge">10</span></td><td>Romario</td><td>0</td></tr>
+</tbody></table><div class="note">League matches only. Friendlies, former players and guest players are excluded from these totals.</div></div>
+<div class="section"><h2>🏆 Trophy dates by player</h2>
+<p><strong>Arnold</strong><br><span class="trophy-date">20-Sep-25</span><span class="trophy-date">28-Feb-26</span></p>
+<p><strong>Macy</strong><br><span class="trophy-date">27-Sep-25</span><span class="trophy-date">31-Jan-26</span></p>
+<p><strong>Max</strong><br><span class="trophy-date">22-Nov-25</span><span class="trophy-date">24-Jan-26</span></p>
+<p><strong>Oliver</strong><br><span class="trophy-date">11-Oct-25</span><span class="trophy-date">21-Feb-26</span><span class="trophy-date">14-Mar-26</span></p>
+<p><strong>Ollie</strong><br><span class="trophy-date">20-Sep-25</span></p>
+<p><strong>Prajen</strong><br><span class="trophy-date">11-Oct-25</span><span class="trophy-date">06-Dec-25</span><span class="trophy-date">28-Feb-26</span><span class="trophy-date">28-Mar-26</span></p>
+<p><strong>Romario</strong><br><span class="trophy-date">22-Nov-25</span><span class="trophy-date">31-Jan-26</span><span class="trophy-date">21-Feb-26</span></p>
+<p><strong>Rylan</strong><br><span class="trophy-date">29-Nov-25</span><span class="trophy-date">24-Jan-26</span><span class="trophy-date">21-Mar-26</span></p>
+<p><strong>Theo</strong><br><span class="trophy-date">01-Nov-25</span></p>
+<p><strong>Vihaan</strong><br><span class="trophy-date">04-Oct-25</span></p>
+</div></div></section>
+
+<section class="tab-panel" id="results">
+<div class="section"><h2>📋 League results and cancellations</h2><table><thead><tr><th>Date</th><th>Opponent</th><th>Status</th><th>Score / note</th><th>Goalscorers</th><th>Awards</th></tr></thead><tbody>
+<tr><td>20-Sep-25</td><td>Bromham United AFC U9 Lions</td><td><span class="result-pill win">Win</span></td><td>6–5</td><td>Arnold (2), Max (1), Rylan (3)</td><td>Ollie, Arnold</td></tr>
+<tr><td>27-Sep-25</td><td>Wixams Wanderers U9 Blues</td><td><span class="result-pill win">Win</span></td><td>7–2</td><td>Arnold (1), Macy (2), Max (1), Rylan (2), Vihaan (1)</td><td>Macy</td></tr>
+<tr><td>04-Oct-25</td><td>HEJ Athletic FC U9</td><td><span class="result-pill win">Win</span></td><td>6–2</td><td>Macy (3), Rory (1), Rylan (1), Vihaan (1)</td><td>Vihaan, Rory</td></tr>
+<tr><td>11-Oct-25</td><td>MK United U9 Sharks</td><td><span class="result-pill draw">Draw</span></td><td>1–1</td><td>Arnold (1)</td><td>Oliver, Prajen</td></tr>
+<tr><td>01-Nov-25</td><td>Walton MK U9 Falcons</td><td><span class="result-pill win">Win</span></td><td>5–1</td><td>Macy (2), Theo (1), Rory (1), Prajen (1)</td><td>Theo, Rory</td></tr>
+<tr><td>22-Nov-25</td><td>AFC Oakley U9 Raiders</td><td><span class="result-pill loss">Loss</span></td><td>0–3</td><td>-</td><td>Max, Romario</td></tr>
+<tr><td>29-Nov-25</td><td>City Colts Youth U9 Panthers</td><td><span class="result-pill loss">Loss</span></td><td>5–7</td><td>Rylan (5)</td><td>Rylan</td></tr>
+<tr><td>06-Dec-25</td><td>Emerson Valley FC U9 Warriors</td><td><span class="result-pill win">Win</span></td><td>5–1</td><td>Rylan (1), Theo (1), Rory (3)</td><td>Romario, Rory, Prajen</td></tr>
+<tr><td>24-Jan-26</td><td>Buckingham FC Youth U9 Athletic</td><td><span class="result-pill win">Win</span></td><td>10–1</td><td>Rylan (3), Max (2), Vihaan (2), Macy (2), Theo (1)</td><td>Max, Rylan</td></tr>
+<tr><td>31-Jan-26</td><td>Bletchley Scot U9</td><td><span class="result-pill loss">Loss</span></td><td>0–3</td><td>-</td><td>Macy, Romario</td></tr>
+<tr><td>07-Feb-26</td><td>Cranfield</td><td><span class="result-pill cancelled">Cancelled</span></td><td>League game cancelled</td><td>-</td><td>-</td></tr>
+<tr><td>21-Feb-26</td><td>MK United U9 Sharks</td><td><span class="result-pill draw">Draw</span></td><td>1–1</td><td>Max (1)</td><td>Oliver, Romario</td></tr>
+<tr><td>28-Feb-26</td><td>HEJ Athletic FC U9</td><td><span class="result-pill draw">Draw</span></td><td>2–2</td><td>Theo (1), Prajen (1)</td><td>Arnold, Prajen</td></tr>
+<tr><td>07-Mar-26</td><td>Cancelled fixture</td><td><span class="result-pill cancelled">Cancelled</span></td><td>League game cancelled</td><td>-</td><td>-</td></tr>
+<tr><td>14-Mar-26</td><td>Bedford Park Rangers U9 Storm</td><td><span class="result-pill win">Win</span></td><td>3–1</td><td>Max (1), Prajen (1), Oliver (1)</td><td>Oliver</td></tr>
+<tr><td>21-Mar-26</td><td>Shenley FC U9 Rhinos</td><td><span class="result-pill win">Win</span></td><td>5–1</td><td>Vihaan (1), Max (1), Arnold (1), Theo (1), Rylan (1)</td><td>Rylan</td></tr>
+<tr><td>28-Mar-26</td><td>Shenley FC U9 Sharks</td><td><span class="result-pill win">Win</span></td><td>11–0</td><td>Prajen (4), Max (2), Rylan (2), Oliver (1), Macy (1), Vihaan (1)</td><td>Prajen</td></tr>
+</tbody></table></div></section>
+
+<section class="tab-panel" id="highlight">
+<div class="section"><h2>⭐ Latest match highlight</h2><div class="highlight">
+<div class="highlight-title">28 March 2026 · Panthers 11–0 Shenley FC U9 Sharks</div>
+<div class="quote">“Today we hosted shenley sharks on a cold windy day, sharks started strong against us, showing some very good shape and the keeper pulled off some great saves. Panthers are on fire with another top form performance from every member of the team, we tried a few different positions today and had some fun with the last quarter, getting Ollie out of goal and came very close to getting on the score sheet with hitting the post. Every one of you looked very hungry for it again today and saw some masterclass team play, nice quick 3 touch simple football played with perfection. A special mention to Vihaan with one of the cleanest powerful first time hits from far which nearly put a hole through the net. Player of the match was very difficult to choose from but today it goes to prajen, who was absolute dynamite up the top today with possibly goal of the season with a half volley from far, well done Prajen well deserved. Absolute perfect performance again today panthers ❤️⚽️⚽️”</div>
+<div class="note"><strong>Goalscorers:</strong> ⚽⚽⚽⚽ Prajen &nbsp;·&nbsp; ⚽⚽ Max &nbsp;·&nbsp; ⚽⚽ Rylan &nbsp;·&nbsp; ⚽ Oliver &nbsp;·&nbsp; ⚽ Macy &nbsp;·&nbsp; ⚽ Vihaan</div>
+</div></div>
+</section>
+</div>
+
+
+</div></div>
+
+<script>
+const buttons=document.querySelectorAll('.tab-btn');
+const panels=document.querySelectorAll('.tab-panel');
+buttons.forEach(btn=>{btn.addEventListener('click',()=>{const target=btn.getAttribute('data-tab');buttons.forEach(b=>b.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(target).classList.add('active');});});
+</script>
+</body>
+</html>
